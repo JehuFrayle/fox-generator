@@ -1,7 +1,14 @@
 import { registerImage } from '../utils/lazy.js';
 const app = document.getElementById("images");
 
-let favorites = JSON.parse(localStorage.getItem("favorites"));
+let favoritesFinder = (memoryPlace) => {
+    if(Array.isArray(JSON.parse(memoryPlace))){
+        return JSON.parse(memoryPlace);
+    } else {
+        return new Array;
+    }
+}
+let favorites = favoritesFinder(localStorage.getItem("favorites"));
 
 if (favorites.length > 0) {
     favorites.forEach((favorite, ind) => {

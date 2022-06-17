@@ -58,7 +58,7 @@ button {
 	font: inherit;
 	outline: inherit;
 }
-.fox:hover .remButton {
+.fox:hover .remButton, .fox:hover .addToFavButton {
     visibility: visible;
     cursor: pointer;
     opacity: 1;
@@ -68,9 +68,25 @@ button {
     margin: -25px;
     bottom: calc(100% - 60px);
     right: 25px;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     background-image: url(../assets/delete-button.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /* Transition */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.25s linear;
+}
+.addToFavButton {
+    position: relative;
+    margin: -25px;
+    bottom: calc(100% - 60px);
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    background-image: url(../assets/heart.png);
     background-repeat: no-repeat;
     background-size: cover;
 
