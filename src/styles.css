@@ -23,7 +23,7 @@ header h3 {
     font-size: 2.25rem;
     font-weight: 800;
 }
-header button {
+header button, header #favoriteButton {
     width: auto;
     color: black;
     padding: 5px;
@@ -50,7 +50,7 @@ header button {
     width: 100%;
     object-fit: cover;
 }
-button, input[type="submit"], input[type="reset"] {
+button {
 	background: none;
 	color: inherit;
 	border: none;
@@ -77,7 +77,7 @@ button, input[type="submit"], input[type="reset"] {
     /* Transition */
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.25s linear;
 }
 .credits {
     display: flex;
