@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home1/jehufray/projects.jehufrayle.com/fox-generator
+    - /bin/cp -R ./ $DEPLOYPATH

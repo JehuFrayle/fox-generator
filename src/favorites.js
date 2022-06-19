@@ -1,6 +1,14 @@
 import { registerImage } from '../utils/lazy.js';
 const app = document.getElementById("images");
 
+let emptyPage = () => {
+    const message = document.createElement('h2');
+    message.className = 'noFavoritesMessage';
+    message.innerHTML = "You don't have favorites yet!"
+
+    app.appendChild(message);
+}
+
 let favoritesFinder = (memoryPlace) => {
     if(Array.isArray(JSON.parse(memoryPlace))){
         return JSON.parse(memoryPlace);
@@ -15,11 +23,7 @@ if (favorites.length > 0) {
         generateFox(favorite, ind)
     })
 } else {
-    const message = document.createElement('h2');
-    message.className = '.noFavoritesMessage';
-    message.innerHTML = "You don't have favorites yet!"
-
-    app.appendChild(message);
+    emptyPage();
 }
 function generateFox(url, index) {
     const container = document.createElement('div');
@@ -47,4 +51,8 @@ function removeFromFavorites(event) {
     favorites.splice(favorites.findIndex((item) => item === memoryId), 1);
     localStorage.setItem("favorites", JSON.stringify(favorites));
     app.removeChild(toRemove);
+    
+    if(favorites.length == 0){
+        emptyPage();
+    }
 }
