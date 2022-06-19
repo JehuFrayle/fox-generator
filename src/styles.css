@@ -36,7 +36,7 @@ header button, header #favoriteButton {
     columns: 3 auto;
     width: 100%;
     margin: 20px auto 60px auto;
-    padding: 5px;
+    padding: 15px;
 }
 #images .fox {
     display: flex;
